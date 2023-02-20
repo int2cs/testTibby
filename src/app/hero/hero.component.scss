@@ -1,0 +1,48 @@
+@import '../variables';
+
+section {
+  display: grid;
+  grid-gap: 10vw;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  max-width: 970px;
+  margin: auto;
+
+  .ctos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 15vmin;
+    aspect-ratio: 1;
+    max-width: 140px;
+    border: 2px solid $white;
+    border-radius: 50%;
+    background: $yellow;
+    transition: transform ease-in-out 200ms;
+
+    &:first-child {
+      background: center/cover url('../../assets/img/cash.jpg') no-repeat;
+    }
+    &:last-child {
+      background: center/cover url('../../assets/img/star.jpg') no-repeat;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+
+    @media screen and (max-width: $breakPoint) {
+      width: 35vmin;
+      max-width: 100px;
+    }
+  }
+
+
+  @media screen and (max-width: $breakPoint) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}

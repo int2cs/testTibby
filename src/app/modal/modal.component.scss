@@ -1,0 +1,72 @@
+@import '../variables';
+
+.modal {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items : center;
+
+  &__wrapper {
+    position: relative;
+    width : 60%;
+    max-width: 320px;
+    padding: 3rem 2rem 1.5rem 2rem;
+    border-radius: 30px;
+    background: $lightYellow;
+
+    &__logo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      width : 70px;
+      height: 90px;
+      //border-radius: 50%;
+      background: center/cover url('../../assets/img/tibby-call.svg') no-repeat;
+    }
+    &__close {
+      position: absolute;
+      top: -50px;
+      right: 10px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $white;
+      padding: 0.5em;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    form {
+      font-family: rammetto, sans-serif;
+      .group-control:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      input:not([type='submit']) {
+        width: 100%;
+        padding: 0.2em 0.5em;
+      }
+      input[type='submit'] {
+        background: $yellow;
+        padding: 0.5em 1.5em;
+        border-radius: 10px;
+        display: block;
+        margin: auto;
+        max-width: 100%;
+
+        &:hover {
+          cursor: pointer;
+          background: darken($yellow, 20%);
+        }
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      padding: 3rem 0.5rem 1.5rem 0.5rem;
+    }
+  }
+}
